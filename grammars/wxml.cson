@@ -1,0 +1,26 @@
+
+'scopeName': 'source.wxml'
+'fileTypes': [
+  'wxml'
+]
+'name': 'wxml'
+'patterns': [
+  {
+    'captures':
+      '1':
+        'name': 'keyword.control.import.include.wxml'
+    'match': '^\\s*\\b(include)\\b'
+  }
+  {
+    'match': '^(!!!)(\\s*[a-zA-Z0-9-_]+)?'
+    'name': 'keyword.other.doctype.wxml'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.section.comment.wxml'
+    'match': '^\\s*(//-?)(?:\\s*[^-\\s]|\\s+\\S).*$\\n?'
+    'name': 'comment.line.double-slash.wxml'
+  }
+]
+'scopeName': 'source.jade'

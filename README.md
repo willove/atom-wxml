@@ -1,2 +1,3 @@
 # atom-wxml
-atom wxml syntax highlighting 
+
+Basic syntax highlighting for wxml files in Atom. https://atom.io/packages/atom-wxml

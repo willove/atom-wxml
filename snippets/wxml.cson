@@ -1,0 +1,44 @@
+".text.html.wxml":
+  "Wxml Component":
+    "prefix": "Page"
+    "body": """
+      Page({
+        data: {},
+        onLoad: function(options) {
+          // Do some initialize when page load.
+        },
+        onReady: function() {
+          // Do something when page ready.
+        },
+        onShow: function() {
+          // Do something when page show.
+        },
+        onHide: function() {
+          // Do something when page hide.
+        },
+        onUnload: function() {
+          // Do something when page close.
+        },
+        onPullDownRefresh: function() {
+          // Do something when pull down
+        },
+        // Event handler.
+        eventHandler: function() { }
+      })
+      <template lang="${1:html}">
+        $3
+      </template>
+      <script>
+      export default {
+        data () {
+          return {}
+        },
+        computed: {},
+        mounted () {},
+        methods: {},
+        components: {}
+      }
+      </script>
+      <style lang="${2:css}">
+      </style>
+    """

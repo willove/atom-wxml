@@ -1,5 +1,5 @@
 ".text.wxml":
-  "Wxml Component":
+  "Wxml Component JS":
     "prefix": "Page"
     "body": """
       Page({
@@ -26,3 +26,6 @@
         eventHandler: function() { }
       })
     """
+  'View':
+    'prefix': 'view'
+    'body': '<view class="$1">\n\t$2\n</view>$0'

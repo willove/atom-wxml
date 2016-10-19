@@ -35,5 +35,5 @@
     'body': '<view class="$1">\n\t$2\n</view>$0'
 
   'Scroll View':
-    'prefix': 'scroll'
+    'prefix': 'scroll-view'
     'body': '<scroll-view class="$1" scroll-x="$2" scroll-y="$3" upper-threshold="$4" lower-threshold="$5" bindscrolltoupper="$6" bindscrolltolower="$7" bindscroll="$8" scroll-into-view="{{$9}}"">\n\t$10\n</scroll-view>$0'

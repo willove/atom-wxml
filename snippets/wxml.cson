@@ -1,4 +1,4 @@
-".text.html.wxml":
+".text.wxml":
   "Wxml Component":
     "prefix": "Page"
     "body": """
@@ -25,20 +25,4 @@
         // Event handler.
         eventHandler: function() { }
       })
-      <template lang="${1:html}">
-        $3
-      </template>
-      <script>
-      export default {
-        data () {
-          return {}
-        },
-        computed: {},
-        mounted () {},
-        methods: {},
-        components: {}
-      }
-      </script>
-      <style lang="${2:css}">
-      </style>
     """

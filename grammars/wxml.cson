@@ -1,7 +1,6 @@
-
 'scopeName': 'text.wxml'
 'fileTypes': [
-  'wxml','wxss'
+  'wxml'
 ]
 'name': 'wxml'
 'patterns': [

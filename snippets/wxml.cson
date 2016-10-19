@@ -1,5 +1,4 @@
 ".text.wxml":
-
   # wxml js
   "Wxml Component JS":
     "prefix": "Page"
@@ -28,16 +27,13 @@
         eventHandler: function() { }
       })
     """
-
   # wxml
   'View':
     'prefix': 'view'
     'body': '<view class="$1">\n\t$2\n</view>$0'
-
   'Scroll View':
     'prefix': 'scroll'
     'body': '<scroll-view class="$1" scroll-x="$2" scroll-y="$3" upper-threshold="$4" lower-threshold="$5" bindscrolltoupper="$6" bindscrolltolower="$7" bindscroll="$8" scroll-into-view="{{$9}}">\n\t$10\n</scroll-view>$0'
-
   'Swiper':
     'prefix': 'swiper'
     'body': """
@@ -49,23 +45,18 @@
         </block>
       </swiper>
     """
-
   'Icon'
     'prefix': 'icon'
     'body': '<icon type="{{$1}}" size="{{$2}}" color="{{$3}}"/>$0'
-
   'Text'
     'prefix': 'text'
     'body': '<text>$1</text>$0'
-
   'Progress'
     'prefix': 'progress'
     'body': '<progress percent={{$1}} show-info={{$2}} stroke-width="{{$3}}" color="{{$4}}" active="{{$5}}">$6</progress>$0'
-
   'Button'
     'prefix': 'button'
     'body': '<button size="${1:default}" type="${2:default}" plain="${3:false}" disabled="${4:false}" loading="${5:false}" form-type="$6" hover-class="$7">$8</button>$0'
-
   'Checkbox Group'
     'prefix': 'checkbox-group'
     'body': """
@@ -73,7 +64,6 @@
         <checkbox wx:for="{{$2}}" value="{{$3}}" disabled="${4:false}" checked="${5:false}"/>{{$6}}
       </checkbox-group>
     """
-
   'Checkbox'
     'prefix': 'checkbox'
     'body': '<checkbox value="{{$1}}" disabled="${2:false}" checked="${3:false}"/>{{$4}}'

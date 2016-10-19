@@ -1,0 +1,88 @@
+# 微信 小程序 javascript 自动补全
+# JS自动补全使用方法：
+# 1) a. 点击 Atom > Snippets
+#    b. 拷贝该文件内容复制至 Snippets内容区域
+# 2) a. MAC下拷贝该文件至 ~/.atom文件夹下，覆盖snippets.cson文件
+#    b. Win下找到.atom文件夹，覆盖snippets.cson文件即可
+
+".source.js":
+  # wxml js
+  "wxml App":
+    "prefix": "App"
+    "body": """
+      App({
+        onLaunch: function() {
+          // Do something initial when launch.
+        },
+        onShow: function() {
+          // Do something when show.
+        },
+        onHide: function() {
+          // Do something when hide.
+        },
+        globalData: ''
+      })
+    """
+
+  "wxml Page":
+    "prefix": "Page"
+    "body": """
+      Page({
+        data: {},
+        onLoad: function(options) {
+          // Do some initialize when page load.
+        },
+        onReady: function() {
+          // Do something when page ready.
+        },
+        onShow: function() {
+          // Do something when page show.
+        },
+        onHide: function() {
+          // Do something when page hide.
+        },
+        onUnload: function() {
+          // Do something when page close.
+        },
+        onPullDownRefresh: function() {
+          // Do something when pull down
+          // config.window = enablePullDownRefresh
+        },
+        // Custom Event handler.
+        eventHandler: function() {},
+        pageData: ''
+      })
+    """
+
+  'wxml Request':
+    'prefix': 'wx.request'
+    'body': """
+      wx.request({
+        url: '$1',
+        data: {$2},
+        header: {
+          ${3: 'Content-Type': 'application/json'}
+        },
+        method: ${4:GET},
+        success: function(res) {$5},
+        fail: function(res) {$6},
+        complete: function(res) {$7}
+      })
+    """
+
+  'wxml UploadFile':
+    'prefix': 'wx.uploadFile'
+    'body': """
+      wx.request({
+        url: "$1",
+        filePath: "$2",
+        name: "$3",
+        header: {
+          ${4: "Content-Type": "application/json"}
+        },
+        formData: {$5}
+        success: function(res) {$6},
+        fail: function(res) {$7},
+        complete: function(res) {$8}
+      })
+    """

@@ -1,6 +1,24 @@
 ".text.wxml":
+
   # wxml js
-  "Wxml Component JS":
+  "Wxml App":
+    "prefix": "App"
+    "body": """
+      App({
+        onLaunch: function() {
+          // Do something initial when launch.
+        },
+        onShow: function() {
+          // Do something when show.
+        },
+        onHide: function() {
+          // Do something when hide.
+        },
+        globalData: ''
+      })
+    """
+
+  "Wxml Page":
     "prefix": "Page"
     "body": """
       Page({
@@ -22,19 +40,48 @@
         },
         onPullDownRefresh: function() {
           // Do something when pull down
+          // config.window = enablePullDownRefresh
         },
         // Custom Event handler.
-        eventHandler: function() { }
+        eventHandler: function() {},
+        pageData: ''
       })
     """
-  # wxml
-  'View':
+
+  # wxml attribute
+  'wxml class attribute':
+    'prefix': 'class'
+    'body': 'class="$1"'
+
+  'wxml hidden attribute':
+    'prefix': 'hidden'
+    'body': 'hidden="$1"'
+
+  'wxml bindchange attribute':
+    'prefix': 'bindchange'
+    'body': 'bindchange="$1"'
+
+  'wxml bindtap attribute':
+    'prefix': 'bindtap'
+    'body': 'bindtap="$1"'
+
+  'wxml style attribute':
+    'prefix': 'style'
+    'body': 'style="$1"'
+
+  # wxml elements
+  'wxml View':
     'prefix': 'view'
     'body': '<view class="$1">\n\t$2\n</view>$0'
-  'Scroll View':
+
+  'wxml Scroll View':
     'prefix': 'scroll'
-    'body': '<scroll-view class="$1" scroll-x="$2" scroll-y="$3" upper-threshold="$4" lower-threshold="$5" bindscrolltoupper="$6" bindscrolltolower="$7" bindscroll="$8" scroll-into-view="{{$9}}">\n\t$10\n</scroll-view>$0'
-  'Swiper':
+    'body': """
+      <scroll-view class="$1" scroll-x="$2" scroll-y="$3" upper-threshold="$4" lower-threshold="$5" bindscrolltoupper="$6"
+        bindscrolltolower="$7" bindscroll="$8" scroll-into-view="{{$9}}">\n\t$10\n</scroll-view>$0
+    """
+
+  'wxml Swiper':
     'prefix': 'swiper'
     'body': """
       <swiper indicator-dots="{{$1}}" autoplay="{{$2}}" current="{{$3}}" interval="{{$4}}" duration="{{$5}}" bindchange="{{$6}}">
@@ -45,25 +92,199 @@
         </block>
       </swiper>
     """
-  'Icon'
+
+  'wxml Icon':
     'prefix': 'icon'
     'body': '<icon type="{{$1}}" size="{{$2}}" color="{{$3}}"/>$0'
-  'Text'
+
+  'wxml Text':
     'prefix': 'text'
     'body': '<text>$1</text>$0'
-  'Progress'
+
+  'wxml Progress':
     'prefix': 'progress'
     'body': '<progress percent={{$1}} show-info={{$2}} stroke-width="{{$3}}" color="{{$4}}" active="{{$5}}">$6</progress>$0'
-  'Button'
+
+  'wxml Button':
     'prefix': 'button'
     'body': '<button size="${1:default}" type="${2:default}" plain="${3:false}" disabled="${4:false}" loading="${5:false}" form-type="$6" hover-class="$7">$8</button>$0'
-  'Checkbox Group'
+
+  'wxml Checkbox Group':
     'prefix': 'checkbox-group'
     'body': """
       <checkbox-group bindchange="$1">
         <checkbox wx:for="{{$2}}" value="{{$3}}" disabled="${4:false}" checked="${5:false}"/>{{$6}}
       </checkbox-group>
     """
-  'Checkbox'
+
+  'wxml Checkbox':
     'prefix': 'checkbox'
-    'body': '<checkbox value="{{$1}}" disabled="${2:false}" checked="${3:false}"/>{{$4}}'
+    'body': '<checkbox value="{{$1}}" disabled="${2:false}" checked="${3:false}"/>$0'
+
+  'wxml Input':
+    'prefix': 'input'
+    'body': """
+        <input value="{{$1}}" type="${2:text}" password=${3:fasle} placeholder="$4" placeholder-style="$5"
+      placeholder-class="$6" disabled="${7:false}" maxlength="${8:140}" auto-focus="${9:false}" bindchange="$10"
+      bindinput="$11" bindfocus="$12" bindblur="$13"/>$0
+    """
+
+  'wxml Label':
+    'prefix': 'label'
+    'body': '<label for="$1" class="$2"></label>$0'
+
+  'wxml Picker Selector':
+    'prefix': 'picker selector'
+    'body': '<picker mode="selector" range="${1:[]}" value="${2:0}" bindchange="$3">\n\t$4\n</picker>$0'
+
+  'wxml Picker Time':
+    'prefix': 'picker time'
+    'body': '<picker mode="time" value="${1:hh\:mm}" start="${2:hh\:mm}" end="${3:hh\:mm}" bindchange="$4">\n\t$5\n</picker>$0'
+
+  'wxml Picker Date':
+    'prefix': 'picker date'
+    'body': '<picker mode="date" value="${1:yyyy-MM-mm}" start="${2:yyyy-MM-dd}" end="${3:yyyy-MM-dd}" fields="${4:day}" bindchange="$5">\n\t$6\n</picker>$0'
+
+  'wxml Radio Group':
+    'prefix': 'radio-group'
+    'body': """
+      <radio-group class="$1" bindchange="$2">
+        <radio wx:for="{{$3}}" value="{{$4}}" checked="${5:false}" disabled="${6:false}"/>{{$7}}
+      </radio-group>$0
+    """
+
+  'wxml Radio':
+    'prefix': 'radio'
+    'body': '<radio value="{{$1}}" checked="${2:false}" disabled="${3:false}"/>{{$4}}$0'
+
+  'wxml Slider':
+    'prefix': 'slider'
+    'body': '<slider min="${1:0}" max="${2:100}" step="${3:1}" disabled="${4:false}" value="${5:0}" show-value="${5:false}" bindchange="$6"/>$0'
+
+  'wxml Switch':
+    'prefix': 'switch'
+    'body': '<switch checked="${1:false}" type="${2:switch}" bindchange="$3"/>$0'
+
+  'wxml Form':
+    'prefix': 'form'
+    'body': '<form bindsubmit="$1" bindreset="$2" report-submit="$3">\n\t$4\n</form>$0'
+
+  'wxml Action Sheet Item':
+    'prefix': 'action-sheet-item'
+    'body': '<action-sheet-item class="$1" bindtap=""$2">$3</action-sheet-item>$0'
+
+  'wxml Action Sheet':
+    'prefix': 'action-sheet'
+    'body': """
+      <action-sheet bindchange="$1">
+        <block wx:for="{{$2}}">
+          <action-sheet-item bindtap="{{$2}}">{{$3}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel>{{$4}}</action-sheet-cancel>
+      </action-sheet>
+    """
+
+  'wxml Modal':
+    'prefix': 'modal'
+    'body': """
+      <modal title="$1" no-cancel="${2:fasle}" confirm-text="${3:确定}" cancel-text="${4:取消}" bindconfirm="$5" bindcancel="$6">
+        <view class="$7">$8</view>
+      </modal>$0
+    """
+
+  'wxml Toast':
+    'prefix': 'toast'
+    'body': '<toast hidden="{{$1}}" duration="${2:1500}" bindchange="$3">\n\t$4\n</toast>$0'
+
+  'wxml Loading':
+    'prefix': 'loading'
+    'body': '<loading hidden="{{$1}}" bindchange="$2">\n\t$3\n</loading>$0'
+
+  'wxml Navigator':
+    'prefix': 'navigator'
+    'body': '<navigator url="{{$1}}" redirect="${2:false}" hover-class="${3:navigator-hover}">$4</navigator>$0'
+
+  'wxml Audio':
+    'prefix': 'audio'
+    'body': """
+      <audio action="{{$1}}" src="{{$2}}" loop="${3:false}" controls="${4:true}" poster="$5" name="$6" author="$7"
+        binderror="$8" bindplay="$9" bindpause="$10" bindratechange="$11" bindtimeupdate="$12" bindended="$13">$14</audio>$0
+    """
+
+  'wxml Image':
+    'prefix': 'image'
+    'body': '<image src="{{$1}}" mode="${2:scaleToFill}" binderror="$3" bindload="$4"></image>$0'
+
+  'wxml Video':
+    'prefix': 'video'
+    'body': '<video src="{{$1}}" binderror="$2"></video>$0'
+
+  'wxml Map':
+    'prefix': 'map'
+    'body': '<map longitude="$1" latitude="$2" scale="${3:16}" markers="$4" covers="$5"></map>$0'
+
+  'wxml Map':
+    'prefix': 'canvas'
+    'body': '<canvas canvas-id="$1" binderror="$2"></canvas>$0'
+
+  # wxml api
+  'wxml GetApp':
+    'prefix': 'getApp'
+    'body': 'getApp()'
+
+  'wxml setData':
+    'prefix': 'setData'
+    'body': 'setData({\n$1\n})'
+
+  'wxml Require':
+    'prefix': 'require'
+    'body': 'require("$1")$0'
+
+  'wxml Module Exports':
+    'prefix': 'module.exports'
+    'body': 'module.exports.$1 = $2'
+
+  'wxml Module Exports':
+    'prefix': 'exports'
+    'body': 'exports.$1 = $2'
+
+  'wxml Import':
+    'prefix': 'import'
+    'body': '<import src="$1"/>$0'
+
+  'wxml Include':
+    'prefix': 'include'
+    'body': '<include src="$1"/>$0'
+
+  'wxml Request':
+    'prefix': 'wx.request'
+    'body': """
+      wx.request({
+        url: '$1',
+        data: {$2},
+        header: {
+          ${3: 'Content-Type': 'application/json'}
+        },
+        method: ${4:GET},
+        success: function(res) {$5},
+        fail: function(res) {$6},
+        complete: function(res) {$7}
+      })
+    """
+
+  'wxml UploadFile':
+    'prefix': 'wx.uploadFile'
+    'body': """
+      wx.request({
+        url: "$1",
+        filePath: "$2",
+        name: "$3",
+        header: {
+          ${4: "Content-Type": "application/json"}
+        },
+        formData: {$5}
+        success: function(res) {$6},
+        fail: function(res) {$7},
+        complete: function(res) {$8}
+      })
+    """

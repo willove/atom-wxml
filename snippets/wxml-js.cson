@@ -1,0 +1,28 @@
+'.source.js':
+  "Wxml Component Js":
+    "prefix": "Page"
+    "body": """
+      Page({
+        data: {},
+        onLoad: function(options) {
+          // Do some initialize when page load.
+        },
+        onReady: function() {
+          // Do something when page ready.
+        },
+        onShow: function() {
+          // Do something when page show.
+        },
+        onHide: function() {
+          // Do something when page hide.
+        },
+        onUnload: function() {
+          // Do something when page close.
+        },
+        onPullDownRefresh: function() {
+          // Do something when pull down
+        },
+        // Event handler.
+        eventHandler: function() { }
+      })
+    """
